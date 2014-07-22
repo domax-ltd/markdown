@@ -352,13 +352,13 @@ int markdownConsume(char* text, int token, yyscan_t scanner);
       textAsString = @"";
       break;
     }
-    case MARKDOWNURL: {
-      NSAttributedStringMarkdownLink* link = [[NSAttributedStringMarkdownLink alloc] init];
-      link.url = [NSURL URLWithString:textAsString];
-      link.range = NSMakeRange(_accum.length, textAsString.length);
-      [_links addObject:link];
-      break;
-    }
+//    case MARKDOWNURL: {
+//      NSAttributedStringMarkdownLink* link = [[NSAttributedStringMarkdownLink alloc] init];
+//      link.url = [NSURL URLWithString:textAsString];
+//      link.range = NSMakeRange(_accum.length, textAsString.length);
+//      [_links addObject:link];
+//      break;
+//    }
       case MARKDOWNHREF: { // [Title] (url "tooltip")
           NSTextCheckingResult *result = [hrefRegex() firstMatchInString:textAsString options:0 range:NSMakeRange(0, textAsString.length)];
 
